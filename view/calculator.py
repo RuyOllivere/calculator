@@ -20,7 +20,6 @@ class Calculator(QDialog):
 
         # QShortcut(QKeySequence('0'), self).activated.connect(lambda: self.showNumber(0))
 
-
         self.one.clicked.connect(lambda: self.showNumber(1))
         self.two.clicked.connect(lambda: self.showNumber(2))
         self.three.clicked.connect(lambda: self.showNumber(3))
@@ -31,11 +30,19 @@ class Calculator(QDialog):
         self.eight.clicked.connect(lambda: self.showNumber(8))
         self.nine.clicked.connect(lambda: self.showNumber(9))
         self.zero.clicked.connect(lambda: self.showNumber(0))
+        # self.clean.clicked.connect(self.clean)
 
 
     def showNumber(self, number):
+        # self.lcdNumber.display(number)
+        if self.lcdNumber.value() == 0.00:
+            print(5)
+        number = str(self.lcdNumber.value()) + str(number)
         self.lcdNumber.display(number)
         print(number)
+
+    def clean(self):
+        self.lcdNumber.display(0)
         
         
 
