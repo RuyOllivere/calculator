@@ -81,6 +81,9 @@ border: none;
       <property name="digitCount">
        <number>10</number>
       </property>
+      <property name="mode">
+       <enum>QLCDNumber::Dec</enum>
+      </property>
       <property name="segmentStyle">
        <enum>QLCDNumber::Filled</enum>
       </property>
