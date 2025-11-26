@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>440</width>
-    <height>477</height>
+    <height>656</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -300,6 +300,23 @@ border: none;
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="display2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>485</y>
+     <width>421</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #fff;
+font-size: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>
