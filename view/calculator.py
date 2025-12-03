@@ -37,7 +37,7 @@ class Calculator(QDialog):
         self.divideNum.clicked.connect(lambda: self.setOperation("/"))
         self.clean_last.clicked.connect(self.cleanLastNumber)
         self.invertNum.clicked.connect(self.invertNumber)
-        self.percentage.clicked.connect(self.percent)
+        self.percentage.clicked.connect(lambda: self.setOperation("%"))
         
         self.minus.clicked.connect(self.Substraction)
 
@@ -52,11 +52,12 @@ class Calculator(QDialog):
         self.lcdNumber.display(self.current_input)
     
     def percent(self):
-        if len(self.current_input) > 0:
-            num = float(self.current_input)
-            num = num / 100
-            self.current_input = str(num)
-        self.lcdNumber.display(self.current_input)
+        if len(self.operationList['%']) > 0:
+            self.current_input = str(float(self.current_input) / 100)
+        self.lcdNumber.display(self.current_input + "*")
+        self.display2.setText(self.current_input + "*")
+        print(self.display2.text())
+            
 
     def cleanLastNumber(self):
         if len(self.current_input) > 0:
@@ -124,8 +125,9 @@ class Calculator(QDialog):
         self.lcdNumber.display("0")
         self.lcdNumber.display(eval(self.display2.text()))
         # continue making the last operation
-        
         self.display2.setText("")
+
+        print(self.current_input)
 
     def Multiply(self):
         self.current_input += "*"
