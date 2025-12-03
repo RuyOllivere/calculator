@@ -3,8 +3,8 @@ from view.calculator import Calculator
 
 if __name__ == '__main__':
 
-    app = QApplication([]);
+    app = QApplication([])
 
-    calculator = Calculator();
+    calculator = Calculator()
 
     app.exec_()
